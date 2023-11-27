@@ -3,7 +3,74 @@
 @section('title', 'Blank Page')
 
 @push('style')
-    <!-- CSS Libraries -->
+    <style>
+        .hero {
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom:50px;
+        }
+
+        .hero-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-inner h2 {
+            font-size: ;
+        }
+
+        .hero-inner p {
+            font-size: 1.6em;
+        }
+
+        .hero-inner a {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Add more slides as needed */
+        .hero.bg1 {
+            background-image: url('img/gedung1.jpg');
+        }
+
+        .hero.bg2 {
+            background-image: url('img/gedung2.jpg');
+        }
+
+        .hero.bg3 {
+            background-image: url('img/karsa.jpg');
+        }
+
+        /* Animation */
+        .hero {
+            animation: fadeInOut 5s infinite;
+        }
+        
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+
+            20%, 80% {
+                opacity: 1;
+            }
+            
+        }
+    </style>
 @endpush
 
 @section('main')<div class="main-content">
@@ -14,18 +81,16 @@
             <div class="section-body">
         </section>
         <div class="col-12 mb-4">
-                        <div class="hero bg-primary text-white">
-                            <div class="hero-inner">
-                                <h2>Selamat Datang Calon Mahasiswa Baru</h2>
-                                <p class="lead">Program studi POLITEKNIK BHAKTI SEMESTA sebagai produk pendidikan mempunyai prospek yang sesuai pasar pada era digital, adapun prospek dari masing-masing program studi. Politeknik Bhakti Semesta membuka Penerimaan Mahasiswa Baru angkatan ke-3 tahun akademik 2023/2024 untuk kelas reguler di 3 program studi unggulan.</p>
-                                <div class="mt-4">
-                                    <a href="#"
-                                        class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-user"></i>
-                                        Akun Anda</a>
-                                </div>
-                            </div>
-                        </div>
+            <div class="hero bg1">
+                <div class="hero-inner">
+                    <h1>Selamat Datang Calon Mahasiswa Baru</h1>
+                    <h3 class="lead">Program studi POLITEKNIK BHAKTI SEMESTA sebagai produk pendidikan mempunyai prospek yang sesuai pasar pada era digital, adapun prospek dari masing-masing program studi. Politeknik Bhakti Semesta membuka Penerimaan Mahasiswa Baru angkatan ke-3 tahun akademik 2023/2024 untuk kelas reguler di 3 program studi unggulan.</h3>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-user"></i> Akun Anda</a>
                     </div>
+                </div>
+            </div>
+
         <div class="section-body">
                 <!-- <h2 class="section-title">Pricing</h2>
                 <p class="section-lead">Price components are very important for SaaS projects or other projects.</p> -->
@@ -112,7 +177,17 @@
 @endsection
 
 @push('scripts')
-    <!-- JS Libraies -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var hero = document.querySelector('.hero');
+            var currentImageIndex = 0;
 
-    <!-- Page Specific JS File -->
+            function changeBackground() {
+                currentImageIndex = (currentImageIndex + 1) % 3; // Assuming you have 3 background images
+                hero.className = 'hero bg' + (currentImageIndex + 1);
+            }
+
+            setInterval(changeBackground, 5000); // Change background every 5 seconds
+        });
+    </script>
 @endpush

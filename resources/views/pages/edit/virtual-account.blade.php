@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <label for="bank">Pilih Bank:</label>
                         <select id="bank" name="bank" class="form-control">
-                            <option value="bank_a">Bank r</option>
+                            <option value="bank_a">Bank A</option>
                             <option value="bank_b">Bank B</option>
                             <option value="bank_c">Bank C</option>
                             <!-- Tambahkan opsi bank sesuai kebutuhan -->

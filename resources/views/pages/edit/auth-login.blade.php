@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="form-group text-right">
-                                <a href="auth-forgot-password"
+                                <a href="bd-forgot"
                                     class="float-left mt-3">
                                     Lupa Password?
                                 </a>
@@ -99,7 +99,7 @@
                             </div>
 
                             <div class="mt-5 text-center">
-                                Belum punya akun? <a href="auth-register.html">Buat baru</a>
+                                Belum punya akun? <a href="bd-register">Buat baru</a>
                             </div>
                         </form>
 

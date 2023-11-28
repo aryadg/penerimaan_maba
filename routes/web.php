@@ -42,6 +42,10 @@ Route::get('/bd-virtual', function () {
     return view('pages.edit.virtual-account', ['type_menu' => 'auth']);
 });
 
+Route::get('/bd-forgot', function () {
+    return view('pages.edit.auth-forgot-password', ['type_menu' => 'auth']);
+});
+
 
 // Dashboard
 Route::get('/dashboard-general-dashboard', function () {

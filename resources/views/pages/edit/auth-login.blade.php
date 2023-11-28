@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="form-group text-right">
-                                <a href="auth-forgot-password.html"
+                                <a href="auth-forgot-password"
                                     class="float-left mt-3">
                                     Lupa Password?
                                 </a>

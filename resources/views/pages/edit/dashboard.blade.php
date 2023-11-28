@@ -83,8 +83,8 @@
         <div class="col-12 mb-4">
             <div class="hero bg1">
                 <div class="hero-inner">
-                    <h1>Selamat Datang Calon Mahasiswa Baru</h1>
-                    <h3 class="lead">Program studi POLITEKNIK BHAKTI SEMESTA sebagai produk pendidikan mempunyai prospek yang sesuai pasar pada era digital, adapun prospek dari masing-masing program studi. Politeknik Bhakti Semesta membuka Penerimaan Mahasiswa Baru angkatan ke-3 tahun akademik 2023/2024 untuk kelas reguler di 3 program studi unggulan.</h3>
+                    <h1 style="background-color: blue">Selamat Datang Calon Mahasiswa Baru</h1>
+                    <h3 style="background-color:blue" class="lead">Program studi POLITEKNIK BHAKTI SEMESTA sebagai produk pendidikan mempunyai prospek yang sesuai pasar pada era digital, adapun prospek dari masing-masing program studi. Politeknik Bhakti Semesta membuka Penerimaan Mahasiswa Baru angkatan ke-3 tahun akademik 2023/2024 untuk kelas reguler di 3 program studi unggulan.</h3>
                     <div class="mt-4">
                         <a href="#" class="btn btn-outline-white btn-lg btn-icon icon-left"><i class="far fa-user"></i> Akun Anda</a>
                     </div>

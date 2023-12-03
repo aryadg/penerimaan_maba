@@ -59,12 +59,12 @@ class AuthController extends Controller
                 if (Auth::attempt($credentials)) {
                     $details = [
                         'username' => $name,
-                        'website' => 'www.ayongoding.com',
+                        'website' => 'www.bhaktisemesta.ac.id',
                         'datetime' => date('Y-m-d H:i:s'),
                         'url' => request()->getHttpHost() . '/register/verify/' . $rand_string
                     ];
                     Mail::to($request->email)->send(new MailSend($details));
-                    return redirect()->route("general-dashboard");
+                    return redirect()->route("bd-dashboard");
                 } else {
                     return response()->json(['error' => 'Unauthorized'], 401);
                 }
@@ -86,7 +86,7 @@ class AuthController extends Controller
         $credentials = request(['email', 'password']);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route("general-dashboard");
+            return redirect()->route("bd-dashboard");
         } else {
             return response()->json(['error' => 'Unauthorized, Wrong password'], 401);
         }
@@ -146,7 +146,7 @@ class AuthController extends Controller
             $user = User::where('email', $request->token)->firstOrFail();
             $user->password = Hash::make($request->password);
             $user->save();
-            return redirect()->route("general-dashboard");
+            return redirect()->route("bd-dashboard");
         } catch (\Throwable $th) {
             return response()->json(['status' => 'Failed', 'state' => '403', "message" => $th->getMessage()], 500);
         }

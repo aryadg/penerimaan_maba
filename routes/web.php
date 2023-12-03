@@ -61,7 +61,7 @@ Route::post('/login-process', [AuthController::class, "login"])->name("login-pro
 
 Route::get('/bd-dashboard', function () {
     return view('pages.edit.dashboard', ['type_menu' => 'auth']);
-});
+})->middleware(["auth", "verified"])->name("bd-dashboard");
 
 Route::get('/bd-alur', function () {
     return view('pages.edit.alur-pendaftaran', ['type_menu' => 'auth']);

@@ -30,7 +30,7 @@ class MailSend extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('rada.digital404@gmail.com', 'Jeffrey Way'),
+            from: new Address('aryagaharu.yt@gmail.com', 'Politeknik Bhakti Semesta'),
             subject: 'Verifikasi Akun',
         );
     }

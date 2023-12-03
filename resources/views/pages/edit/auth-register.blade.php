@@ -15,14 +15,15 @@
         </div>
 
         <div class="card-body">
-            <form method="POST">
+            <form action="{{route('regis-process')}}" method="POST">
+                @csrf
                 <div class="row">
                     <div class="form-group col-6">
-                        <label for="frist_name">First Name</label>
-                        <input id="frist_name"
+                        <label for="first_name">First Name</label>
+                        <input id="first_name"
                             type="text"
                             class="form-control"
-                            name="frist_name"
+                            name="first_name"
                             autofocus>
                     </div>
                     <div class="form-group col-6">
@@ -69,7 +70,7 @@
                     </div>
                 </div>
 
-                <div class="form-divider">
+                {{-- <div class="form-divider">
                     Your Home
                 </div>
                 <div class="row">
@@ -113,7 +114,7 @@
                         <label class="custom-control-label"
                             for="agree">I agree with the terms and conditions</label>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                     <button type="submit"

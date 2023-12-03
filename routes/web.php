@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,16 +18,46 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/dashboard-general-dashboard');
 
+Route::controller(VerifyEmailController::class)->group(function () {
+    // processing token
+    Route::get('/email/verify/{id}/{hash}', '__invoke')
+        ->middleware(['signed', 'throttle:6,1'])
+        ->name('verification.verify');
+    // resend link for email verification
+    Route::post('/email/verify/resend', 'send')
+        ->middleware(['auth:api', 'throttle:6,1'])
+        ->name('verification.send');
+    // handdle verified middleware
+    Route::get('/email/verify', 'show')
+        ->name('verification.notice');
+});
+
+Route::post('/forgot-password', [AuthController::class, 'requestForgotPassword'])
+    ->middleware('guest')
+    ->name('password.email');
+Route::post('/reset-password', [AuthController::class, 'updatePassword'])
+    ->middleware('guest')
+    ->name('password.update');
+Route::get('/reset-password/{token}', [AuthController::class, 'getToken'])
+    ->middleware('guest')
+    ->name('password.reset');
+
 
 // ROUTE PROJECT BARU
-
+// Register
 Route::get('/bd-register', function () {
     return view('pages.edit.auth-register', ['type_menu' => 'auth']);
 });
+Route::get('/logout', [AuthController::class, "logout"])->name('logout');
+Route::post('/register-process', [AuthController::class, "register"])->name("regis-process");
+
+Route::get('register/verify/{verify_key}', [RegisterController::class, 'verify'])->name('verify');
+Route::get('/email/verify', [RegisterController::class, 'show'])->name('verification.notice');
 
 Route::get('/bd-login', function () {
     return view('pages.edit.auth-login', ['type_menu' => 'auth']);
-});
+})->name("login");
+Route::post('/login-process', [AuthController::class, "login"])->name("login-process");
 
 Route::get('/bd-dashboard', function () {
     return view('pages.edit.dashboard', ['type_menu' => 'auth']);
@@ -50,7 +83,8 @@ Route::get('/bd-forgot', function () {
 // Dashboard
 Route::get('/dashboard-general-dashboard', function () {
     return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
-});
+})->middleware(["auth", "verified"])->name("general-dashboard");
+
 Route::get('/dashboard-ecommerce-dashboard', function () {
     return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);
 });

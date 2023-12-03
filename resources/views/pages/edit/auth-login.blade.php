@@ -41,9 +41,10 @@
                         </h4>
                         <p class="text-muted">Sebelum memulai, Anda harus masuk atau mendaftar jika Anda belum memiliki akun.</p>
                         <form method="POST"
-                            action="#"
+                            action="{{route("login-process")}}"
                             class="needs-validation"
                             novalidate="">
+                            @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input id="email"

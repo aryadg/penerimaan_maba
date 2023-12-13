@@ -79,6 +79,10 @@ Route::get('/bd-forgot', function () {
     return view('pages.edit.auth-forgot-password', ['type_menu' => 'auth']);
 });
 
+Route::get('/bd-profil', function () {
+    return view('pages.edit.profil', ['type_menu' => 'auth']);
+});
+
 
 // Dashboard
 Route::get('/dashboard-general-dashboard', function () {

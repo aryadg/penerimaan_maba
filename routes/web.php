@@ -82,6 +82,12 @@ Route::get('/bd-forgot', function () {
 Route::get('/bd-profil', function () {
     return view('pages.edit.profil', ['type_menu' => 'auth']);
 });
+Route::get('/bd-alluser', function () {
+    return view('pages.edit.all-user', ['type_menu' => 'auth']);
+});
+Route::get('/bd-adduser', function () {
+    return view('pages.edit.add-user', ['type_menu' => 'auth']);
+});
 
 
 // Dashboard

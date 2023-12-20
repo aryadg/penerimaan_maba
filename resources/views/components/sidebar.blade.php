@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="bd-dashbord">ASOY</a>
+            <a href="bd-dashboard">ASOY</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="bd-dashboard">BD</a>
@@ -12,16 +12,16 @@
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
-                    <li class='{{ Request::is('bd-dashboard') ? 'active' : '' }}'>
+                    <li class="{{ Request::is('bd-alluser') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('dashboard-general-dashboard') }}">General Dashboard</a>
+                            href="{{ url('bd-alluser') }}">All User</a>
                     </li>
-                    <li class="{{ Request::is('dashboard-ecommerce-dashboard') ? 'active' : '' }}">
+                    <li class="{{ Request::is('bd-dashboard') ? 'active' : '' }}">
                         <a class="nav-link"
-                            href="{{ url('dashboard-ecommerce-dashboard') }}">Ecommerce Dashboard</a>
+                            href="{{ url('dashboard-ecommerce-dashboard') }}">NEXT DUMP</a>
                     </li>
                 </ul>
-            </li>
+            <!-- </li>
             <li class="menu-header">Starter</li>
             <li class="nav-item dropdown {{ $type_menu === 'layout' ? 'active' : '' }}">
                 <a href="#"
@@ -381,7 +381,7 @@
                     href="{{ url('credits') }}"><i class="fas fa-pencil-ruler">
                     </i> <span>Credits</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
 
         <div class="hide-sidebar-mini mt-4 mb-4 p-3">

@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+// use App\Controller\MahasiswaController;
+use App\Http\Controllers\MahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,9 +84,8 @@ Route::get('/bd-forgot', function () {
 Route::get('/bd-profil', function () {
     return view('pages.edit.profil', ['type_menu' => 'auth']);
 });
-Route::get('/bd-alluser', function () {
-    return view('pages.edit.all-user', ['type_menu' => 'auth']);
-});
+Route::get('/bd-alluser', [MahasiswaController::class,'index']);
+
 Route::get('/bd-adduser', function () {
     return view('pages.edit.add-user', ['type_menu' => 'auth']);
 });

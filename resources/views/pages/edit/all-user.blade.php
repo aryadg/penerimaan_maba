@@ -105,6 +105,7 @@
                                             <th>Nomor Telepon</th>
                                             <th>Status</th>
                                         </tr>
+                                        @foreach ($data as $item)
                                         <tr>
                                             <td>
                                                 <div class="custom-checkbox custom-control">
@@ -116,7 +117,7 @@
                                                         class="custom-control-label">&nbsp;</label>
                                                 </div>
                                             </td>
-                                            <td>Laravel 5 Tutorial: Introduction
+                                            <td>{{$item['name']}}
                                                 <div class="table-links">
                                                     <a href="#">View</a>
                                                     <div class="bullet"></div>
@@ -126,7 +127,7 @@
                                                         class="text-danger">Trash</a>
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td>{{$item['email']}}
                                                 <a href="#">Web Developer</a>,
                                                 <a href="#">Tutorial</a>
                                             </td>
@@ -138,7 +139,7 @@
                                                         width="35"
                                                         data-toggle="title"
                                                         title="">
-                                                    <div class="d-inline-block ml-1">Rizal Fakhri</div>
+                                                    <div class="d-inline-block ml-1">{{$item['email']}}</div>
                                                 </a>
                                             </td>
                                             <td>2018-01-20</td>
@@ -146,170 +147,8 @@
                                                 <div class="badge badge-primary">Published</div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox"
-                                                        data-checkboxes="mygroup"
-                                                        class="custom-control-input"
-                                                        id="checkbox-3">
-                                                    <label for="checkbox-3"
-                                                        class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>Laravel 5 Tutorial: Installing
-                                                <div class="table-links">
-                                                    <a href="#">View</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#">Edit</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#"
-                                                        class="text-danger">Trash</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="#">Web Developer</a>,
-                                                <a href="#">Tutorial</a>
-                                            </td>
-                                            <td>
-                                                <a href="#">
-                                                    <img alt="image"
-                                                        src="{{ asset('img/avatar/avatar-5.png') }}"
-                                                        class="rounded-circle"
-                                                        width="35"
-                                                        data-toggle="title"
-                                                        title="">
-                                                    <div class="d-inline-block ml-1">Rizal Fakhri</div>
-                                                </a>
-                                            </td>
-                                            <td>2018-01-20</td>
-                                            <td>
-                                                <div class="badge badge-primary">Published</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox"
-                                                        data-checkboxes="mygroup"
-                                                        class="custom-control-input"
-                                                        id="checkbox-4">
-                                                    <label for="checkbox-4"
-                                                        class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>Laravel 5 Tutorial: MVC
-                                                <div class="table-links">
-                                                    <a href="#">View</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#">Edit</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#"
-                                                        class="text-danger">Trash</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="#">Web Developer</a>,
-                                                <a href="#">Tutorial</a>
-                                            </td>
-                                            <td>
-                                                <a href="#">
-                                                    <img alt="image"
-                                                        src="{{ asset('img/avatar/avatar-5.png') }}"
-                                                        class="rounded-circle"
-                                                        width="35"
-                                                        data-toggle="title"
-                                                        title="">
-                                                    <div class="d-inline-block ml-1">Rizal Fakhri</div>
-                                                </a>
-                                            </td>
-                                            <td>2018-01-20</td>
-                                            <td>
-                                                <div class="badge badge-primary">Published</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox"
-                                                        data-checkboxes="mygroup"
-                                                        class="custom-control-input"
-                                                        id="checkbox-5">
-                                                    <label for="checkbox-5"
-                                                        class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>Laravel 5 Tutorial: CRUD
-                                                <div class="table-links">
-                                                    <a href="#">View</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#">Edit</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#"
-                                                        class="text-danger">Trash</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="#">Web Developer</a>,
-                                                <a href="#">Tutorial</a>
-                                            </td>
-                                            <td>
-                                                <a href="#">
-                                                    <img alt="image"
-                                                        src="{{ asset('img/avatar/avatar-5.png') }}"
-                                                        class="rounded-circle"
-                                                        width="35"
-                                                        data-toggle="title"
-                                                        title="">
-                                                    <div class="d-inline-block ml-1">Rizal Fakhri</div>
-                                                </a>
-                                            </td>
-                                            <td>2018-01-20</td>
-                                            <td>
-                                                <div class="badge badge-danger">Draft</div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox"
-                                                        data-checkboxes="mygroup"
-                                                        class="custom-control-input"
-                                                        id="checkbox-1">
-                                                    <label for="checkbox-1"
-                                                        class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>Laravel 5 Tutorial: Deployment
-                                                <div class="table-links">
-                                                    <a href="#">View</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#">Edit</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#"
-                                                        class="text-danger">Trash</a>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="#">Web Developer</a>,
-                                                <a href="#">Tutorial</a>
-                                            </td>
-                                            <td>
-                                                <a href="#">
-                                                    <img alt="image"
-                                                        src="{{ asset('img/avatar/avatar-5.png') }}"
-                                                        class="rounded-circle"
-                                                        width="35"
-                                                        data-toggle="title"
-                                                        title="">
-                                                    <div class="d-inline-block ml-1">Rizal Fakhri</div>
-                                                </a>
-                                            </td>
-                                            <td>2018-01-20</td>
-                                            <td>
-                                                <div class="badge badge-warning">Pending</div>
-                                            </td>
-                                        </tr>
+                                        @endforeach
+                                        
                                     </table>
                                 </div>
                                 <div class="float-right">

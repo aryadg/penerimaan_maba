@@ -6,6 +6,7 @@ use App\Http\Controllers\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 // use App\Controller\MahasiswaController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::controller(VerifyEmailController::class)->group(function () {
     // handdle verified middleware
     Route::get('/email/verify', 'show')
         ->name('verification.notice');
+
 });
 
 Route::post('/forgot-password', [AuthController::class, 'requestForgotPassword'])
@@ -51,10 +53,18 @@ Route::get('/bd-register', function () {
     return view('pages.edit.auth-register', ['type_menu' => 'auth']);
 });
 Route::get('/logout', [AuthController::class, "logout"])->name('logout');
+
 Route::post('/register-process', [AuthController::class, "register"])->name("regis-process");
 
 Route::get('register/verify/{verify_key}', [RegisterController::class, 'verify'])->name('verify');
+
 Route::get('/email/verify', [RegisterController::class, 'show'])->name('verification.notice');
+
+Route::post('/create-user', [UserController::class, 'createUser'])->name('create.user');
+
+Route::get('/bd-alluser', [MahasiswaController::class,'index']);
+
+
 
 Route::get('/bd-login', function () {
     return view('pages.edit.auth-login', ['type_menu' => 'auth']);
@@ -84,11 +94,18 @@ Route::get('/bd-forgot', function () {
 Route::get('/bd-profil', function () {
     return view('pages.edit.profil', ['type_menu' => 'auth']);
 });
-Route::get('/bd-alluser', [MahasiswaController::class,'index']);
 
 Route::get('/bd-adduser', function () {
     return view('pages.edit.add-user', ['type_menu' => 'auth']);
 });
+
+Route::get('/bd-all-user', function () {
+    return view('pages.edit.all-user', ['type_menu' => 'auth'])->name("bd-all-user");
+});
+
+
+
+
 
 
 // Dashboard

@@ -100,9 +100,9 @@
                                                 </div>
                                             </th>
                                             <th>Nama</th>
-                                            <th>NIM</th>
+                                            {{-- <th>NIM</th> --}}
                                             <th>Email</th>
-                                            <th>Nomor Telepon</th>
+                                            <th>Tanggal Dibuat</th>
                                             <th>Status</th>
                                         </tr>
                                         @foreach ($data as $item)
@@ -127,10 +127,6 @@
                                                         class="text-danger">Trash</a>
                                                 </div>
                                             </td>
-                                            <td>{{$item['email']}}
-                                                <a href="#">Web Developer</a>,
-                                                <a href="#">Tutorial</a>
-                                            </td>
                                             <td>
                                                 <a href="#">
                                                     <img alt="image"
@@ -142,7 +138,7 @@
                                                     <div class="d-inline-block ml-1">{{$item['email']}}</div>
                                                 </a>
                                             </td>
-                                            <td>2018-01-20</td>
+                                            <td>{{$item['created_at']}}</td>
                                             <td>
                                                 <div class="badge badge-primary">Published</div>
                                             </td>

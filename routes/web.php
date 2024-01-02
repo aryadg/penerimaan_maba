@@ -5,8 +5,11 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 // use App\Controller\MahasiswaController;
-use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MahasiswaDetailController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +66,12 @@ Route::get('/email/verify', [RegisterController::class, 'show'])->name('verifica
 Route::post('/create-user', [UserController::class, 'createUser'])->name('create.user');
 
 Route::get('/bd-alluser', [MahasiswaController::class,'index']);
+
+//route detail mahasiswa
+Route::prefix('mahasiswa')->group(function () {
+// Route untuk menampilkan formulir pendaftaran mahasiswa baru
+Route::post('/mahasiswa/create', [MahasiswaDetailController::class, 'create'])->name('mahasiswa.create');
+});
 
 
 

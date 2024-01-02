@@ -15,47 +15,43 @@
 
             <div class="section-body">
                 <!-- Formulir Pendaftaran Mahasiswa Baru -->
-                <form action="URL_GOOGLE_FORM_ANDA" method="post" target="_blank">
-                    <!-- Ganti URL_GOOGLE_FORM_ANDA dengan URL formulir Google Anda -->
+                <form action="{{ route('mahasiswa.create') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label for="nama">Nama Lengkap:</label>
-                        <input type="text" id="nama" name="entry.1234567890" class="form-control">
+                        <input type="text" id="nama" name="nama_lengkap" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="alamat">Alamat:</label>
-                        <textarea id="alamat" name="entry.2345678901" class="form-control"></textarea>
+                        <textarea id="alamat" name="alamat" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="tanggal_lahir">Tanggal Lahir:</label>
-                        <input type="date" id="tanggal_lahir" name="entry.3456789012" class="form-control">
+                        <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="email">Alamat Email:</label>
-                        <input type="email" id="email" name="entry.4567890123" class="form-control">
+                        <input type="email" id="email" name="email" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="telepon_rumah">Telepon Rumah:</label>
-                        <input type="tel" id="telepon_rumah" name="entry.5678901234" class="form-control">
+                        <input type="tel" id="telepon" name="telepon" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="nisn">NISN:</label>
-                        <input type="text" id="nisn" name="entry.6789012345" class="form-control">
+                        <input type="text" id="nisn" name="nisn" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="asal_sekolah">Asal Sekolah:</label>
-                        <input type="text" id="asal_sekolah" name="entry.7890123456" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="alamat_sekolah">Alamat Sekolah:</label>
-                        <textarea id="alamat_sekolah" name="entry.8901234567" class="form-control"></textarea>
+                        <input type="text" id="asal_sekolah" name="asal_sekolah" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="daftar_ke">Daftar ke:</label>
-                        <input type="text" id="daftar_ke" name="entry.9012345678" class="form-control">
+                        <input type="text" id="daftar_ke" name="daftar_ke" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="foto">Upload Foto:</label>
-                        <input type="file" id="foto" name="entry.0123456789" class="form-control">
+                        <input type="file" id="foto" name="foto" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary">Daftar</button>
                 </form>

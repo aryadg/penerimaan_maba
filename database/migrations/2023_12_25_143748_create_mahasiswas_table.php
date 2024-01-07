@@ -19,9 +19,9 @@ class CreateMahasiswasTable extends Migration
             $table->string('telepon');
             $table->string('nisn');
             $table->string('asal_sekolah');
-            $table->date('daftar_ke');
-            $table->string('foto')->nullable();
-            $table->timestamps();
+            $table->string('daftar_ke');
+            // $table->string('foto')->nullable();
+            // $table->timestamps();
         });
     }
 

@@ -9,6 +9,8 @@ class Mahasiswa extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'nama_lengkap',
         'alamat',
@@ -17,18 +19,10 @@ class Mahasiswa extends Model
         'nisn',
         'asal_sekolah',
         'daftar_ke',
-        'foto',
+        // 'foto',
     ];
 
-    // Jika Anda ingin menyembunyikan beberapa atribut
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
-
-    // Jika Anda ingin mengubah tipe data atribut
     protected $casts = [
         'tanggal_lahir' => 'datetime',
-        // 'daftar_ke' => 'datetime',
     ];
 }

@@ -21,7 +21,7 @@ class MahasiswaDetailController extends Controller
             'nisn' => 'required',
             'asal_sekolah' => 'required',
             'daftar_ke' => 'required',
-            'foto' => 'image|mimes:jpeg,png,jpg,gif', // sesuaikan dengan kebutuhan
+            // 'foto' => 'image|mimes:jpeg,png,jpg,gif', // sesuaikan dengan kebutuhan
         ]);
 
         if ($validator->fails()) {
@@ -49,10 +49,10 @@ class MahasiswaDetailController extends Controller
             $mahasiswa->daftar_ke = $daftar_ke;
 
             // Proses upload foto jika ada
-            if ($request->hasFile('foto')) {
-                $fotoPath = $request->file('foto')->store('public/foto_mahasiswa');
-                $mahasiswa->foto = basename($fotoPath);
-            }
+            // if ($request->hasFile('foto')) {
+            //     $fotoPath = $request->file('foto')->store('public/foto_mahasiswa');
+            //     $mahasiswa->foto = basename($fotoPath);
+            // }
 
             // Simpan mahasiswa ke dalam database
             $mahasiswa->save();

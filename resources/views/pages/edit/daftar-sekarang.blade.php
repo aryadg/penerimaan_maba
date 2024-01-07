@@ -47,12 +47,17 @@
                     </div>
                     <div class="form-group">
                         <label for="daftar_ke">Daftar ke:</label>
-                        <input type="text" id="daftar_ke" name="daftar_ke" class="form-control">
-                    </div>
-                    <div class="form-group">
+                        <select id="daftar_ke" name="daftar_ke" class="form-control" required>
+                            <option value="Bisnis_Digital">Bisnis Digital</option>
+                            <option value="Keamanan_Siber">Keamanan Siber</option>
+                            <option value="Rekayasa_Multimedia">Rekayasa Multimedia</option>
+                        </select>
+                    </div>                    
+                    
+                    {{-- <div class="form-group">
                         <label for="foto">Upload Foto:</label>
                         <input type="file" id="foto" name="foto" class="form-control">
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn btn-primary">Daftar</button>
                 </form>
                 <!-- End Formulir Pendaftaran Mahasiswa Baru -->

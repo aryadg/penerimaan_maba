@@ -9,9 +9,6 @@ class Mahasiswa extends Model
 {
     use HasFactory;
 
-    protected $table = 'mahasiswa'; // Sesuaikan dengan nama tabel di database
-    // protected $primaryKey = 'id'; // Sesuaikan dengan nama kolom primary key
-
     protected $fillable = [
         'nama_lengkap',
         'alamat',
@@ -24,10 +21,10 @@ class Mahasiswa extends Model
     ];
 
     // Jika Anda ingin menyembunyikan beberapa atribut
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    // protected $hidden = [
+    //     'password',
+    //     'remember_token',
+    // ];
 
     // Jika Anda ingin mengubah tipe data atribut
     protected $casts = [

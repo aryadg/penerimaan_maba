@@ -29,10 +29,10 @@
                         <label for="tanggal_lahir">Tanggal Lahir:</label>
                         <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="email">Alamat Email:</label>
                         <input type="email" id="email" name="email" class="form-control">
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label for="telepon_rumah">Telepon Rumah:</label>
                         <input type="tel" id="telepon" name="telepon" class="form-control">

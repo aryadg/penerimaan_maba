@@ -11,6 +11,8 @@ class MahasiswaDetailController extends Controller
 {
     public function create(Request $request)
     {
+        // return Mahasiswa::all();
+
         $validator = Validator::make($request->all(), [
             'nama_lengkap' => 'required',
             'alamat' => 'required',
@@ -34,6 +36,8 @@ class MahasiswaDetailController extends Controller
         $asal_sekolah = $request->input('asal_sekolah');
         $daftar_ke = $request->input('daftar_ke');
 
+        // return $request->all();
+
         try {
             $mahasiswa = new Mahasiswa();
             $mahasiswa->nama_lengkap = $nama_lengkap;
@@ -53,11 +57,9 @@ class MahasiswaDetailController extends Controller
             // Simpan mahasiswa ke dalam database
             $mahasiswa->save();
 
-            // Otomatis verifikasi mahasiswa
-            $mahasiswa->markAsVerified();
-
             return redirect()->route('bd-dashboard')->with('success', 'Mahasiswa baru berhasil ditambahkan!');
         } catch (\Exception $e) {
+            return $e->getMessage();
             // Handle exception jika terjadi kesalahan saat menyimpan mahasiswa
             return redirect()->route('bd-dashboard')->with('error', $e->getMessage());
         }

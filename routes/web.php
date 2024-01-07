@@ -81,7 +81,7 @@ Route::get('/bd-login', function () {
 Route::post('/login-process', [AuthController::class, "login"])->name("login-process");
 
 Route::get('/bd-dashboard', function () {
-    return view('pages.edit.dashboard', ['type_menu' => 'auth']);
+    return view('pages.edit.dashboard', ['type_menu' => 'auth',]);
 })->middleware(["auth", "verified"])->name("bd-dashboard");
 
 Route::get('/bd-alur', function () {
@@ -89,8 +89,8 @@ Route::get('/bd-alur', function () {
 });
 
 Route::get('/bd-daftar-sekarang', function () {
-    return view('pages.edit.daftar-sekarang', ['type_menu' => 'auth']);
-});
+    return view('pages.edit.daftar-sekarang', ['type_menu' => 'auth', 'error'=>'awal']);
+})->name("form-daftar"); 
 
 Route::get('/bd-virtual', function () {
     return view('pages.edit.virtual-account', ['type_menu' => 'auth']);

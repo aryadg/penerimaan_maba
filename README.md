@@ -7,7 +7,7 @@
   </a>
 </p>
 
-<h1>Ini punya rahmat</h1>
+<h1>Ini punya Arya</h1>
 
 <h1 align="center">Laravel Stisla</h1>
 

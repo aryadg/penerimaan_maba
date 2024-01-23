@@ -104,14 +104,24 @@ Route::get('/bd-profil', function () {
     return view('pages.edit.profil', ['type_menu' => 'auth']);
 });
 
-Route::get('/bd-adduser', function () {
+Route::get('/bdadduser', function () {
     return view('pages.edit.add-user', ['type_menu' => 'auth']);
-})->middleware(["auth", "verified", "ceklevel:admin"]);
+// })->middleware(["auth", "verified", "ceklevel:admin"]);
+});
 
-Route::get('/bd-all-user', function () {
+Route::get('/bdalluser', function () {
     return view('pages.edit.all-user', ['type_menu' => 'auth']);
-})->middleware(["auth", "verified", "ceklevel:admin"]);
+// })->middleware(["auth", "verified", "ceklevel:admin"]);
+});
 
+
+//TESTINT MIDDLEWARE ADMIN
+Route::group(['middleware' => ['auth','ceklevel:admin,user']], function(){
+
+    route::get('/bdalluser', 'SidebarController@index');
+    route::get('/bdalluser', 'SidebarController@bdalluser')->name('bdalluser');
+    route::get('/bdadduser', 'SidebarController@bdadduser')->name('bdadduser');
+});
 
 
 

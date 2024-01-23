@@ -14,7 +14,7 @@
             <div class="section-header">
                 <h1>Create User</h1>
                 <div class="section-header-button">
-                    <a href="bd-adduser"
+                    <a href="bd-add-user"
                         class="btn btn-primary">Add New</a>
                 </div>
                 <div class="section-header-breadcrumb">

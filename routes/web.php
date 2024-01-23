@@ -22,7 +22,7 @@ use App\Http\Controllers\MahasiswaDetailController;
 |
 */
 
-Route::redirect('/', '/dashboard-general-dashboard');
+// Route::redirect('/', '/dashboard-general-dashboard');
 
 Route::controller(VerifyEmailController::class)->group(function () {
     // processing token
@@ -82,7 +82,7 @@ Route::post('/login-process', [AuthController::class, "login"])->name("login-pro
 
 Route::get('/bd-dashboard', function () {
     return view('pages.edit.dashboard', ['type_menu' => 'auth',]);
-})->middleware(["auth", "verified"])->name("bd-dashboard");
+})->middleware(["auth", "verified", "ceklevel:admin,user"])->name("bd-dashboard");
 
 Route::get('/bd-alur', function () {
     return view('pages.edit.alur-pendaftaran', ['type_menu' => 'auth']);
@@ -106,11 +106,11 @@ Route::get('/bd-profil', function () {
 
 Route::get('/bd-adduser', function () {
     return view('pages.edit.add-user', ['type_menu' => 'auth']);
-});
+})->middleware(["auth", "verified", "ceklevel:admin"]);
 
 Route::get('/bd-all-user', function () {
-    return view('pages.edit.all-user', ['type_menu' => 'auth'])->name("bd-all-user");
-});
+    return view('pages.edit.all-user', ['type_menu' => 'auth']);
+})->middleware(["auth", "verified", "ceklevel:admin"]);
 
 
 
@@ -118,9 +118,9 @@ Route::get('/bd-all-user', function () {
 
 
 // Dashboard
-Route::get('/dashboard-general-dashboard', function () {
-    return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
-})->middleware(["auth", "verified"])->name("general-dashboard");
+// Route::get('/dashboard-general-dashboard', function () {
+//     return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
+// })->middleware(["auth", "verified"])->name("general-dashboard");
 
 Route::get('/dashboard-ecommerce-dashboard', function () {
     return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);
